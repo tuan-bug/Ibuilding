@@ -1,0 +1,56 @@
+﻿@model IBUIDING.Models.DTO.ProjectDTO
+
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+<h3>Chỉnh sửa thông tin khu đô thị</h3>
+
+<form asp-action="EditProject" asp-controller="Project" method="post" class="form">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="CodeProject">Mã khu đô thị</label>
+                <input asp-for="CodeProject" class="form-control" />
+                <span asp-validation-for="CodeProject" class="text-danger small"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="NameProject">Tên khu đô thị</label>
+                <input asp-for="NameProject" class="form-control" />
+                <span asp-validation-for="NameProject" class="text-danger small"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="PeopleContact">Người liên hệ</label>
+                <input asp-for="PeopleContact" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="PhoneContact">Số điện thoại liên hệ</label>
+                <input asp-for="PhoneContact" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="AddressProject">Địa chỉ</label>
+                <input asp-for="AddressProject" class="form-control" />
+                <span asp-validation-for="AddressProject" class="text-danger small"></span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Description">Mô tả</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</form>
